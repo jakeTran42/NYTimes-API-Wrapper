@@ -2,13 +2,25 @@
   "name": "apiwrapper",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "umd/nyt-wrapper.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "prepare": "rollup --config"
   },
+  "module": "esm/index.js",
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "request": "^2.88.0"
-  }
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "rollup": "^1.19.4",
+    "rollup-plugin-terser": "^5.1.1"
+  },
+  "files": [
+    "esm/*",
+    "emd/*"
+  ]
 }

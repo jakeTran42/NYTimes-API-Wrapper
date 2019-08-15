@@ -37,7 +37,7 @@ class TheTimes {
 
   archive(callback) {
     //   /{year}/{month}.json
-      this._sendRequest(`archive/v1/${this.query}.json?`)
+      this._sendRequest(`archive/v1/${this.query}.json?`, callback)
   }
 
   _sendRequest(service, callback) {
@@ -55,12 +55,4 @@ class TheTimes {
   }
 }
 
-const times = new TheTimes("AlXgoIpRe2n0WiErV633AGifrdaBrHbH")
-
-times.topstories(function(data) {
-  console.log(data)
-})
-
-// request(`https://api.nytimes.com/svc/topstories/v2/science.json?api-key=AlXgoIpRe2n0WiErV633AGifrdaBrHbH`, function(error, response, body) {
-//     console.log(JSON.parse(body).response)
-// })
+module.exports = TheTimes
